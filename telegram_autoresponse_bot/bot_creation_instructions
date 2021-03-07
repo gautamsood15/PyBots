@@ -1,0 +1,11 @@
+1. install and login telegram on mobile
+2. goto the channel "BotFather"
+3. send text "/newbot" to crete a new bot
+4. send text "TBot" to name the bot
+5. send text  "admin_Tbot" to choose username for bot
+
+6. After this bot is created and we are given an API key
+
+NOTE:- send text "/help" to see what commands we have in BotFather
+
+
