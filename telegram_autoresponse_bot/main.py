@@ -16,4 +16,9 @@ def handle_message(update, context):
 
     update.message.reply_text(response)
 
+def error(update, context):
+    print(f"Update {update} caused error {context.error}")
+
+
+
 
