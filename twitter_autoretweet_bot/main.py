@@ -11,7 +11,20 @@ def twitter_bot(hashtag, delay):
     while True:
     print(f"\n{datetime.datetime.now()}\n")
 
-    for
+    for tweet in twitter.Cursor(api.search, q=hashtag, rpp=10).items(5):
+        try:
+            tweet_id = dict(tweet._json)["id"]
+            tweet_text = dict(tweet._json)["text"]
+
+            print("id: " + str(tweet_id))
+            print("text: " + str(tweet_text))
+
+
+
+    time.sleep(delay)
+
+
+
 
 
 
