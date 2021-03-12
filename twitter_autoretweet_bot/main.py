@@ -19,7 +19,10 @@ def twitter_bot(hashtag, delay):
             print("id: " + str(tweet_id))
             print("text: " + str(tweet_text))
 
+            api.retweet(tweet_id)
 
+        except twitter.TweepError as error:
+            print(error.reson)
 
     time.sleep(delay)
 
