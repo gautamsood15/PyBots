@@ -14,3 +14,10 @@ def tweet(text, id):
 
 tweet("Hello world this is a Twitter post!")
 
+
+def favorite(id):
+    api.create_favorite(id)
+
+favorite(id)
+
+
