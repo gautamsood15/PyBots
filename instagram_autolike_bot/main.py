@@ -10,4 +10,4 @@ class GuiCommands:
 
     def navigate_to_heart(self, speed):
         position = pt.locateOnScreen()
-
+        
