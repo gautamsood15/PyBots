@@ -39,7 +39,7 @@ def post_response(message):
     pt.click()
     pt.typewrite(message, interval=.01)
 
-    # pt.typewrite("\n", interval=.01)
+    pt.typewrite("\n", interval=.01)
 
 
 # Processes Response
@@ -57,15 +57,33 @@ def process_response(message):
         else:
             return "I want to eat something."
 
-processed_message = process_response(get_message())
-post_response(processed_message)
+
+# Check for new messages
+def check_for_new_messages():
+    pt.moveTo(x + 50, y - 35, duration=.5)
+
+    while True:
+        # Continuously checks for green dot and new messages
+        try:
+            position = pt.locateOnScreen("whatsapp/green_circle.png", confidence=.7)
+
+            if position is not None:
+                pt.moveTo(position)
+                pt.moveRel(-100, 0)
+                pt.click()
+                sleep(.5)
 
 
-get_message()
+        except(Exception):
+            print("No new other users with new messages located")
 
-post_response(get_message())
+        if pt.pixelMatchescolor(int(x + 50), int(y - 35), (255,255,255), tolerence=10):
+            print("is_white")
+            processed_message = process_response(get_message())
+            post_response(processed_message)
+        else:
+            print("No new messages yet....")
+        sleep(5)
 
 
-
-
-
+check_for_new_messages()
