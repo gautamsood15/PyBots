@@ -57,7 +57,8 @@ def process_response(message):
         else:
             return "I want to eat something."
 
-
+processed_message = process_response(get_message())
+post_response(processed_message)
 
 
 get_message()
