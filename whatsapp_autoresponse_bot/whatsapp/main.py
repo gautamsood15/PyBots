@@ -39,7 +39,25 @@ def post_response(message):
     pt.click()
     pt.typewrite(message, interval=.01)
 
-    pt.typewrite("\n", interval=.01)
+    # pt.typewrite("\n", interval=.01)
+
+
+# Processes Response
+def process_response(message):
+    random_no = random.randrange(3)
+
+    if "?" in str(message).lower():
+        return "Don't ask me any questions!"
+
+    else:
+        if random_no == 0:
+            return "That's cool!"
+        elif random_no == 1:
+            return "Remember to subscribe to Code Palace!"
+        else:
+            return "I want to eat something."
+
+
 
 
 get_message()
