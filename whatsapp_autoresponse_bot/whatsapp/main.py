@@ -22,6 +22,31 @@ def get_message():
     pt.tripleClick()
     pt.rightClick()
     pt.moveRel(12, 15)
+    whatsapp_message = pyperclip.paste()
     pt.click()
+    print("message received: " + whatsapp_message)
+
+    return whatsapp_message
+
+# Posts
+def post_response(message):
+    global x, y
+
+    position = pt.locateOnScreen("whatsapp/smiley_paperclip.png", confidence=.6)
+    x = position[0]
+    y = position[1]
+    pt.moveTo(x + 200, y + 20, duration=.5)
+    pt.click()
+    pt.typewrite(message, interval=.01)
+
+    pt.typewrite("\n", interval=.01)
+
 
 get_message()
+
+post_response(get_message())
+
+
+
+
+
